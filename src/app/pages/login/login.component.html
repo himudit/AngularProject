@@ -1,0 +1,48 @@
+<div class="login-container">
+  <form [formGroup]="userData" (ngSubmit)="onSubmit()">
+    <h2 class="text-center mb-4">Login</h2>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        formControlName="email"
+      />
+      <div
+        *ngIf="
+          userData.get('email')?.touched &&
+          userData.get('email')?.hasError('required')
+        "
+        class="text-danger"
+      >
+        Email is required.
+      </div>
+      <div
+        *ngIf="
+          userData.get('email')?.touched &&
+          userData.get('email')?.hasError('email')
+        "
+        class="text-danger"
+      >
+        Enter a valid email.
+      </div>
+      <small *ngIf="userData.get('email')?.errors?.['email']" style="color: red">
+        Please enter a valid email address
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+</div>

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-
+import { CartService } from '../../services/cart.service';
+import { Recipe } from '../../services/cart.service';
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
@@ -11,4 +12,11 @@ export class RecipeCardComponent {
   @Input() strMeal!: string;
   @Input() strMealThumb!: string;
   @Input() strInstructions!: string;
+
+  @Input() recipe!: Recipe;
+  constructor(private cartService: CartService) { }
+
+  addToCart() {
+    this.cartService.addRecipe(this.strMeal, this.strMealThumb, this.strInstructions);
+  }
 }
