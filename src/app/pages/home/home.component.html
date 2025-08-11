@@ -1,0 +1,8 @@
+<p>{{title}}</p>
+
+<button (click)="changeTitle('Should we Start Cooking?')">Change Title</button>
+
+<div class="card-container">
+    <app-recipe-card *ngFor="let recipe of data" [idMeal]="recipe.idMeal" [strMeal]="recipe.strMeal" [strMealThumb]="recipe.strMealThumb" [strInstructions]="recipe.strInstructions">
+    </app-recipe-card>
+</div>
