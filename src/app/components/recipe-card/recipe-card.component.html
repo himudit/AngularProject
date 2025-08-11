@@ -1,13 +1,10 @@
-<!-- <div [style.width.px]="200" [style.height.px]="200" class="recipe-card">
-    <img [src]="strMealThumb" alt="Recipe Image" [style.width.px]="200" [style.height.px]="200">
-    <h6 [style.color]="'black'">{{ strMeal }}</h6>
-</div> -->
-
 <div class="card" style="width: 18rem;">
   <img  [src]="strMealThumb" alt="Recipe Image" class="card-img-top" >
   <div class="card-body">
     <h5 class="card-title">{{ strMeal }}</h5>
     <!-- <p class="card-text">{{strInstructions}}</p> -->
-    <a href="#" class="btn btn-primary">Add to Favourite</a>
+    <a href="#" class="btn btn-primary">Add to Favourite
+   <mat-icon>favorite</mat-icon>
+    </a>
   </div>
 </div>
